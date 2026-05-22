@@ -1,80 +1,80 @@
 
 # AegisCore
 
-A comprehensive system integrity scanning and security framework for Windows applications.
+Uma estrutura abrangente de verificação de integridade do sistema e segurança para aplicativos Windows.
 
-## Architecture
+## Arquitetura
 
-AegisCore is built with a modular architecture consisting of multiple specialized components:
+O AegisCore é construído com uma arquitetura modular composta por vários componentes especializados:
 
-- **AegisCore.Core** - Core models and interfaces
-- **AegisCore.Registry** - Secure registry provider implementation
-- **AegisCore.Scanning** - Scanner engine with pluggable rules
-- **AegisCore.Validation** - File and service validators
-- **AegisCore.Risk** - Trust and risk calculation
-- **AegisCore.Rollback** - Transaction management and quarantine
-- **AegisCore.Storage** - SQLite repositories and data persistence
-- **AegisCore.Logging** - Serilog with configurable sinks
-- **AegisCore.Services** - Windows Service and Named Pipes
-- **AegisCore.UI** - WinUI 3 with MVVM pattern
-- **AegisCore.Installer** - WiX Toolset for MSI packaging
+- **AegisCore.Core** - Modelos e interfaces principais
+- **AegisCore.Registry** - Implementação segura de provedor de registro
+- **AegisCore.Scanning** - Mecanismo de verificação com regras conectáveis
+- **AegisCore.Validation** - Validadores de arquivos e serviços
+- **AegisCore.Risk** - Cálculo de confiança e risco
+- **AegisCore.Rollback** - Gerenciamento de transações e quarentena
+- **AegisCore.Storage** - Repositórios SQLite e persistência de dados
+- **AegisCore.Logging** - Serilog com sinks configuráveis
+- **AegisCore.Services** - Windows Service e Named Pipes
+- **AegisCore.UI** - WPF com padrão MVVM
+- **AegisCore.Installer** - WiX Toolset para empacotamento MSI
 
-## Getting Started
+## Começando
 
-### Prerequisites
+### Pré-requisitos
 
 - .NET 8 SDK
 - Windows 10/11
-- Visual Studio 2022 or VS Code with C# extension
+- Visual Studio 2022 ou VS Code com extensão C#
 
-### Build
+### Compilar
 
 ```bash
 dotnet build
 ```
 
-### Run UI Application
+### Executar Aplicação de Interface
 
 ```bash
 dotnet run --project src/AegisCore.UI
 ```
 
-### Run Tests
+### Executar Testes
 
 ```bash
 dotnet test tests/AegisCore.Tests
 ```
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 AegisCore/
 ├── src/
-│   ├── AegisCore.Core/          # Models, interfaces
-│   ├── AegisCore.Registry/      # IRegistryProvider, secure implementation
-│   ├── AegisCore.Scanning/      # Scanner engine, pluggable rules
-│   ├── AegisCore.Validation/    # File validators, service validators
-│   ├── AegisCore.Risk/          # Trust/risk calculation
-│   ├── AegisCore.Rollback/      # Transactions, quarantine
-│   ├── AegisCore.Storage/       # SQLite, repositories
-│   ├── AegisCore.Logging/       # Serilog, configurable sinks
+│   ├── AegisCore.Core/          # Modelos, interfaces
+│   ├── AegisCore.Registry/      # IRegistryProvider, implementação segura
+│   ├── AegisCore.Scanning/      # Mecanismo de verificação, regras conectáveis
+│   ├── AegisCore.Validation/    # Validadores de arquivos, validadores de serviços
+│   ├── AegisCore.Risk/          # Cálculo de confiança/risco
+│   ├── AegisCore.Rollback/      # Transações, quarentena
+│   ├── AegisCore.Storage/       # SQLite, repositórios
+│   ├── AegisCore.Logging/       # Serilog, sinks configuráveis
 │   ├── AegisCore.Services/      # Windows Service, Named Pipes
-│   ├── AegisCore.UI/            # WinUI 3, MVVM, complete interface
+│   ├── AegisCore.UI/            # WPF, MVVM, interface completa
 │   └── AegisCore.Installer/     # WiX Toolset, MSI
 ├── tests/
 │   └── AegisCore.Tests/         # xUnit, FluentAssertions
 └── scripts/
-    └── publish-github.ps1       # Versioning and push script
+    └── publish-github.ps1       # Script de versionamento e push
 ```
 
-## Contributing
+## Contribuindo
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Consulte [CONTRIBUTING.md](CONTRIBUTING.md) para diretrizes.
 
-## License
+## Licença
 
-See [LICENSE](LICENSE) for details.
+Consulte [LICENSE](LICENSE) para detalhes.
 
-## Security
+## Segurança
 
-See [SECURITY.md](SECURITY.md) for security policy.
+Consulte [SECURITY.md](SECURITY.md) para política de segurança.
