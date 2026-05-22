@@ -1,0 +1,17 @@
+<Project Sdk="WixToolset.Sdk/4.14.0">
+  <PropertyGroup>
+    <OutputType>Bundle</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="4.14.0" />
+    <PackageReference Include="WixToolset.Util.wixext" Version="4.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AegisCore.UI\AegisCore.UI.csproj" />
+    <ProjectReference Include="..\AegisCore.Services\AegisCore.Services.csproj" />
+  </ItemGroup>
+</Project>

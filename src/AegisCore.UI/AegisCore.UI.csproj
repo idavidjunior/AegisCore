@@ -1,0 +1,18 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AegisCore.Core\AegisCore.Core.csproj" />
+    <ProjectReference Include="..\AegisCore.Scanning\AegisCore.Scanning.csproj" />
+    <ProjectReference Include="..\AegisCore.Risk\AegisCore.Risk.csproj" />
+    <ProjectReference Include="..\AegisCore.Rollback\AegisCore.Rollback.csproj" />
+    <ProjectReference Include="..\AegisCore.Logging\AegisCore.Logging.csproj" />
+  </ItemGroup>
+</Project>
