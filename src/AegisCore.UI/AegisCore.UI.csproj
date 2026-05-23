@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Management" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AegisCore.Core\AegisCore.Core.csproj" />
     <ProjectReference Include="..\AegisCore.Scanning\AegisCore.Scanning.csproj" />
     <ProjectReference Include="..\AegisCore.Risk\AegisCore.Risk.csproj" />

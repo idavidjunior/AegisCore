@@ -1,0 +1,92 @@
+<UserControl x:Class="AegisCore.UI.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AegisCore.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid Background="#1e1e1e">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#2d2d2d" Padding="20">
+            <StackPanel>
+                <TextBlock Text="AEGISCORE" FontSize="36" FontWeight="Bold" Foreground="#00ff88" FontFamily="Consolas"/>
+                <TextBlock Text="Windows Integrity Intelligence Platform" FontSize="14" Foreground="#888888" Margin="0,5,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- System Stats -->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Stats Cards -->
+            <Grid Grid.Row="0" Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- CPU Card -->
+                <Border Grid.Column="0" Background="#2d2d2d" CornerRadius="8" Padding="20" Margin="0,0,10,0">
+                    <StackPanel>
+                        <TextBlock Text="CPU USAGE" FontSize="12" Foreground="#888888" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding CpuUsage, StringFormat={}{0:F1}%}" FontSize="36" Foreground="#00ff88" FontWeight="Bold" Margin="0,10,0,0"/>
+                        <ProgressBar Height="8" Value="{Binding CpuUsage}" Maximum="100" Foreground="#00ff88" Background="#3d3d3d" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- RAM Card -->
+                <Border Grid.Column="1" Background="#2d2d2d" CornerRadius="8" Padding="20" Margin="10,0">
+                    <StackPanel>
+                        <TextBlock Text="MEMORY" FontSize="12" Foreground="#888888" FontWeight="Bold"/>
+                        <TextBlock FontSize="36" Foreground="#00aaff" FontWeight="Bold" Margin="0,10,0,0">
+                            <Run Text="{Binding RamFree, StringFormat={}{0:F1}}"/>
+                            <Run Text="/" FontSize="24"/>
+                            <Run Text="{Binding RamTotal, StringFormat={}{0:F1}}" FontSize="24"/>
+                            <Run Text=" GB" FontSize="18"/>
+                        </TextBlock>
+                        <ProgressBar Height="8" Value="{Binding RamUsed}" Maximum="{Binding RamTotal}" Foreground="#00aaff" Background="#3d3d3d" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Disk Card -->
+                <Border Grid.Column="2" Background="#2d2d2d" CornerRadius="8" Padding="20" Margin="10,0,0,0">
+                    <StackPanel>
+                        <TextBlock Text="DISK C:" FontSize="12" Foreground="#888888" FontWeight="Bold"/>
+                        <TextBlock FontSize="36" Foreground="#ffaa00" FontWeight="Bold" Margin="0,10,0,0">
+                            <Run Text="{Binding DiskFree, StringFormat={}{0:F1}}"/>
+                            <Run Text=" GB" FontSize="18"/>
+                        </TextBlock>
+                        <ProgressBar Height="8" Value="{Binding DiskUsed}" Maximum="{Binding DiskUsed, Converter={StaticResource DiskTotalConverter}}" Foreground="#ffaa00" Background="#3d3d3d" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- ASCII Logo -->
+            <Border Grid.Row="1" Background="#2d2d2d" CornerRadius="8" Padding="20">
+                <TextBlock FontFamily="Consolas" FontSize="10" Foreground="#00ff88" TextAlignment="Center">
+                    <Run Text="╔════════════════════════════════════════════════════════════════╗&#x0a;"/>
+                    <Run Text="║  ███████╗██╗   ██╗██████╗ ███████╗██████╗ ██╗██╗  ██╗███████╗██╗     &#x0a;"/>
+                    <Run Text="║  ██╔════╝██║   ██║██╔══██╗██╔════╝██╔══██╗██║╚██╗██╔╝██╔════╝██║     &#x0a;"/>
+                    <Run Text="║  ███████╗██║   ██║██████╔╝█████╗  ██████╔╝██║ ╚███╔╝ █████╗  ██║     &#x0a;"/>
+                    <Run Text="║  ╚════██║██║   ██║██╔══██╗██╔══╝  ██╔══██╗██║ ██╔██╗ ██╔══╝  ██║     &#x0a;"/>
+                    <Run Text="║  ███████║╚██████╔╝██████╔╝███████╗██║  ██║██║██╔╝ ██╗███████╗███████╗&#x0a;"/>
+                    <Run Text="║  ╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝╚══════╝&#x0a;"/>
+                    <Run Text="╚════════════════════════════════════════════════════════════════╝&#x0a;"/>
+                    <Run Text="&#x0a;"/>
+                    <Run Text="System Status: MONITORING ACTIVE&#x0a;"/>
+                    <Run Text="Press any key to continue to menu..."/>
+                </TextBlock>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
